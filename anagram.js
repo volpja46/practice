@@ -4,7 +4,7 @@
 // in the same quantity. Only consider characters, not spaces
 // or punctuation.  Consider capital letters to be the same as lower case
 // --- Examples
-//   anagrams('rail safety', 'fairy tales') --> True
+//
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
@@ -14,6 +14,15 @@ function cleanString (str) {
   return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
 }
 
+
+
 function (stringA, stringB) {
   return cleanString(stringA) === cleanString(stringB);
 }
+
+
+
+//
+// anytime we find a char that is not a num, cap char or lowercase character
+// replace it with '' nothing!
+//  /w disregards any space or punctuation finds only characters
