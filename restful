@@ -1,0 +1,11 @@
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+HTTP works as a request-response protocol between a client and server.
+
+GET - Requests data from a specified resource
+POST - Submits data to be processed to a specified resource
+
+notable
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
