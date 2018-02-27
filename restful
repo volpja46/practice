@@ -4,6 +4,9 @@ HTTP works as a request-response protocol between a client and server.
 GET - Requests data from a specified resource
 POST - Submits data to be processed to a specified resource
 
+get - can be bookmarked post - cannot be bookmarked
+GET is less secure compared to POST because data sent is part of the URL
+
 notable
 POST requests are never cached
 POST requests do not remain in the browser history
