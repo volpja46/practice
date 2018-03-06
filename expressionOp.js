@@ -5,4 +5,11 @@ function expressionOperator(string) {
   // go through expression & see where there are operators
   let addThese = [];
   let subtractThese = [];
+  
+  for (var i = 0; i < string.length - 1; i++) {
+    if (string.includes("+") && !string.includes("-")) {
+      let newString = string.replace(/[^\w]/g, "");
+      let result = newString.split('').map(function(item) {
+          return parseInt(item, 10);
+          });
 }
