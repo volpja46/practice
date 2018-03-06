@@ -17,3 +17,5 @@ function expressionOperator(string) {
     }
   }
 }
+
+expressionOperator("+ 1 + 2 3");
