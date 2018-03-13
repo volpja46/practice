@@ -34,3 +34,17 @@ function matrix(n) {
       counter++;
     }
     startRow++;
+
+        // Right column
+        for (let i = startRow; i <= endRow; i++) {
+          results[i][endColumn] = counter;
+          counter++;
+        }
+        endColumn--;
+
+        // Bottom row
+        for (let i = endColumn; i >= startColumn; i--) {
+          results[endRow][i] = counter;
+          counter++;
+        }
+        endRow--;
