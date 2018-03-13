@@ -4,3 +4,28 @@
 // --- Examples
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
+
+function maxChar(str) {
+
+const charMap = {};
+let maxChar = '';
+let max = 0;
+
+for (let char of str) {
+  if (charMap[char]) {
+  // charMap[char] is the # of times the letter appeard
+    charMap[char] ++
+  } else {
+    charMap[char] = 1
+    }
+  }
+  // iterate through keys of the obj IN!!!** NOT OF
+  for (let char in charMap) {
+    // char is the keys !! (letters)
+    if (charMap[char] > max) {
+     max = charMap[char]
+     maxChar = char
+    }
+  }
+  return maxChar
+}
