@@ -20,5 +20,16 @@ function levelWidth(root) {
 // iterate thr arr..if 's' is only thing left GET ME OUTTA HERE
     while (arr.length > 1) {
     const node = arr.shift()
-
+    // if we pull out s we want to incr counter and add 's' to end of array
+    if (node === 's'){
+      counters.push()
+      arr.push('s')
+      // else we are looking at an actual node
+    } else {
+      arr.push(...node.children)
+      counters[counters.length - 1]++;
+    }
+  }
+  return counters;
+}
   }
