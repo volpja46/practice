@@ -101,3 +101,79 @@ class LinkedList {
     }
     previous.next = null;
   }
+
+  removeAt(index) {
+    if (!this.head) {
+      return;
+    }
+
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      if (counter === index - 1) {
+        if (node.next) {
+          return (node.next = node.next.next);
+        } else {
+          return (node.next = null);
+        }
+      }
+      node = node.next;
+      counter++;
+    }
+  }
+
+  getFirst() {
+    return this.head;
+  }
+
+  insertFirst(data) {
+    this.head = new Node(data, this.getFirst());
+  }
+
+  getLast() {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    while (node.next) {
+      node = node.next;
+    }
+
+    return node;
+  }
+
+  insertLast(data) {
+    const last = this.getLast();
+
+    if (last) {
+      last.next = new Node(data);
+      return last.next;
+    } else {
+      this.head = new Node(data);
+      return this.head;
+    }
+  }
+
+  forEach(fn) {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    while (node) {
+      fn(node);
+      node = node.next;
+    }
+  }
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
+}
+
+module.exports = { Node, LinkedList };
