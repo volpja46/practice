@@ -29,3 +29,75 @@ class LinkedList {
 
     return counter;
   }
+
+
+  getAt(index) {
+    if (!this.head) {
+      return null;
+    }
+
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      node = node.next;
+      counter++;
+    }
+    return null;
+  }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    let counter = 1;
+    let previous = this.head;
+    let node = this.head.next;
+    while (node) {
+      if (counter === index) {
+        previous.next = new Node(data, node);
+        return;
+      }
+      previous = node;
+      node = node.next;
+      counter++;
+    }
+
+    previous.next = new Node(data, node);
+  }
+
+  removeFirst() {
+    if (!this.head) {
+      return;
+    }
+
+    this.head = this.head.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let previous = this.head;
+    let node = this.head.next;
+    while (node.next) {
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
+  }
